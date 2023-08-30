@@ -3,8 +3,8 @@ resource "hcloud_ssh_key" "default" {
   public_key = file("~/.ssh/hetzner_id_rsa.pub")
 }
 
-resource "hcloud_server" "vpn" {
-  name        = "vpn"
+resource "hcloud_server" "mpvps" {
+  name        = "mpvps"
   image       = var.os_type
   server_type = var.server_type
   location    = var.location
@@ -24,6 +24,6 @@ resource "hcloud_network_subnet" "hcloud_subnet" {
 }
 
 resource "hcloud_server_network" "vpn_network" {
-  server_id = hcloud_server.vpn.id
+  server_id = hcloud_server.mpvps.id
   subnet_id = hcloud_network_subnet.hcloud_subnet.id
 }
