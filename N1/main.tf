@@ -1,6 +1,7 @@
+# Create a new SSH key
 resource "hcloud_ssh_key" "default" {
-  name       = "hetzner-cloud ssh key"
-  public_key = file("~/.ssh/hetzner_id_rsa.pub")
+  name       = "hetzner-ssh-key"
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 resource "hcloud_server" "mpvps" {
