@@ -1,0 +1,5 @@
+[docker]
+81.12.30.178
+[docker:vars]
+ansible_user=root
+ansible_password=Aa7410
