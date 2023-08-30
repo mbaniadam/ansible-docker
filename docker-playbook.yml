@@ -11,7 +11,7 @@
           - docker-engine
           - containerd
           - runc
-        status: absent
+        state: absent
 
     - name: Add Docker GPG apt Key
       apt_key:
