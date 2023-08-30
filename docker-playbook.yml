@@ -2,10 +2,9 @@
 - hosts: docker
   become: true
   gather_facts: true
-  
 
 - name: remove old docker 
-  apt :
+  apt:
     name:
       - docker
       - docker.io
