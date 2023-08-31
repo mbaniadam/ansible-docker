@@ -1,4 +1,4 @@
-From alpine:latest
+FROM alpine:latest
 RUN apk add --update --no-cache py3-pip
 COPY N3/requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
