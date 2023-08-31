@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from datetime import datetime
 import linux_metrics 
 import subprocess
+import json
 
 app = Flask(__name__)
 @app.route('/', methods=["GET"])
