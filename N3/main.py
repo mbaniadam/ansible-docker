@@ -8,7 +8,11 @@ app = Flask(__name__)
 def get_metrics():
     date_time = datetime.now()
     current_time = date_time.strftime("%d-%m-%Y   %H:%M:%S")
-    d_partitions = jsonify(psutil.disk_partitions())
+    d_partitions = psutil.disk_partitions()
+    for partition in d_partitions:
+        print(partition)
+        partition_info = {}
+
     
 
 
