@@ -9,9 +9,10 @@ app = Flask(__name__)
 def get_metrics():
     date_time = datetime.now()
     current_time = date_time.strftime("%d-%m-%Y   %H:%M:%S")
-    res_ls_disk = subprocess.Popen('df -h', shell=True, stdout=subprocess.PIPE).communicate()[0]
+    sub_result = subprocess.Popen('df -h', shell=True, stdout=subprocess.PIPE).communicate()[0]
+    js_result = json.dump(sub_result)
     return '''The current date and time is: {}
     df -h output:\n
-    {}'''.format(current_time,res_ls_disk)
+    {}'''.format(current_time,js_result)
 
 app.run(host='0.0.0.0',port=5000)
