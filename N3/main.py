@@ -8,8 +8,8 @@ app = Flask(__name__)
 def get_metrics():
     date_time = datetime.now()
     current_time = date_time.strftime("%d-%m-%Y   %H:%M:%S")
-    res_ls_disk = jsonify(subprocess.Popen('df -h', shell=True))
+    #res_ls_disk = jsonify(subprocess.Popen('df -h', shell=True))
 
-    return '''The current date and time is: {}'''.format(current_time,res_ls_disk)
+    return '''The current date and time is: {}'''.format(current_time)
 
 app.run(host='0.0.0.0',port=5000)
