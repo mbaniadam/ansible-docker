@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
 import psutil
-
+import json
 
 app = Flask(__name__)
 @app.route('/', methods=["GET"])
@@ -35,13 +35,15 @@ def get_metrics():
     js_ram_info = jsonify(ram_info)
     js_cpu_info = jsonify(cpu_info)
 
+    js_disk_info = json.loads(js_disk_info.get_data().decode("utf-8"))
+    js_ram_info = json.loads(js_ram_info.get_data().decode("utf-8"))
+    js_cpu_info = json.loads(js_cpu_info.get_data().decode("utf-8"))
 
 
     return '''The current date and time is: {}\n
     Disk information:\n{}\n
     Memory information:\n{}\n
-    CPU information:\n{}\n
-    '''.format(current_time,js_disk_info,js_ram_info,js_cpu_info)
+    CPU information:\n{}\n'''.format(current_time,js_disk_info,js_ram_info,js_cpu_info)
 
 
 app.run(host='0.0.0.0',port=5000)
