@@ -17,10 +17,30 @@ def get_metrics():
             "p_free_space": psutil.disk_usage(partition.mountpoint).free
         }
         disk_info.append(partition_info)
+    
+    machine_memory = psutil.virtual_memory()
+    ram_info = {
+        "ram_total" = machine_memory.total,
+        "ram_available" = machine_memory.available,
+        "ram_free" = machine_memory.free
+    }
+    
+    cpu_info = {
+        "cpu_last" = psutil.cpu_percent(interval=None),
+        "cpu_avg" =  psutil.getloadavg()
+    }
+
+    js_disk_info = jsonify(disk_info)
+    js_ram_info = jsonify(ram_info)
+    js_cpu_info = jsonify(cpu_info)
+
+
 
     return '''The current date and time is: {}\n
-    Disk information:\n{}
-    '''.format(current_time,disk_info)
+    Disk information:\n{}\n
+    Memory information:\n{}\n
+    CPU information:\n{}\n
+    '''.format(current_time,js_disk_info,js_ram_info,js_cpu_info)
 
 
 app.run(host='0.0.0.0',port=5000)
