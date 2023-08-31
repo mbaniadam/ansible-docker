@@ -23,12 +23,13 @@ def get_metrics():
         "ram_total" = machine_memory.total,
         "ram_available" = machine_memory.available,
         "ram_free" = machine_memory.free
-    }
+        }
+    
     
     cpu_info = {
         "cpu_last" = psutil.cpu_percent(interval=None),
         "cpu_avg" =  psutil.getloadavg()
-    }
+        }
 
     js_disk_info = jsonify(disk_info)
     js_ram_info = jsonify(ram_info)
