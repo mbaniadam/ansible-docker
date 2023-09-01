@@ -2,4 +2,3 @@
 91.107.251.104
 [docker:vars]
 ansible_user=root
-#ansible_password=Aa7410
