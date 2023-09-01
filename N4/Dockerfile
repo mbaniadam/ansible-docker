@@ -1,5 +1,5 @@
 FROM alpine:latest
-RUN apk add --update --no-cache py3-pip gcc python3-dev
+RUN apk add --update --no-cache py3-pip gcc python3-dev build-base linux-headers
 COPY N3/requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 COPY N3/main.py /usr/src/app/
