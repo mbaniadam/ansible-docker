@@ -7,7 +7,6 @@ Before getting started, ensure you have the following prerequisites in place:
 
 - Hetzner Cloud account and an API token.
 - Github Token for Jenkins
-- SSH key pair for authentication (generate using ssh-keygen -t rsa -m PEM).
 - Linux machine with Ansible and Terraform installed.
   
 
@@ -18,6 +17,10 @@ Before getting started, ensure you have the following prerequisites in place:
 git clone https://github.com/mbaniadam/ASA-Project.git
 ```
 - Set up your Hetzner Cloud API token in the variables.tfvars file.
+- Create SSH key pair for authentication
+```console bash
+ssh-keygen -t rsa -m PEM
+```
 - Run Terraform to create the virtual server:
 ```console bash
 terraform apply --var-file variables.tfvars
