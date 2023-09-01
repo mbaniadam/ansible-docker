@@ -78,7 +78,7 @@ pipeline {
         
         stage('Deploy to server') {
             steps {
-                sshPublisher(publishers: [sshPublisherDesc(configName: '<USER>@<YOUR_SERVER_PUBLIC_IP>', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker-compose up -f N4/docker-compose.yml up -d', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'N4/')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                sshPublisher(publishers: [sshPublisherDesc(configName: '<USER>@<YOUR_SERVER_PUBLIC_IP>', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker-compose -f N4/docker-compose.yml up -d', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'N4/')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
     
