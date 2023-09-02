@@ -8,7 +8,7 @@ Before getting started, ensure you have the following prerequisites in place:
 - Hetzner Cloud account and an API token.
 - Github Token for Jenkins
 - Linux machine with Ansible and Terraform installed.
-  
+- Docker Hub account and an API token to push image.
 
 
 ### Step 1: Create a Virtual Server on Hetzner Cloud
