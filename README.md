@@ -38,8 +38,8 @@ ansible-playbook - inventory.yml
 
 ### Step 3: CI/CD Pipeline with Jenkins
 - Set up Jenkins and install necessary plugins.(publish-over-ssh)
-**Note**
-  You can use my ansible playbook in the ansible directory of this repository for this purpose:
+**_NOTE:_**  You can use my ansible playbook in the ansible directory of this repository for this purpose.
+Repository address:
   ```console bash
   git clone https://github.com/mbaniadam/ansible-role-jenkins-via-terraform.git
   ```
