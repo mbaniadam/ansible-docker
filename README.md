@@ -95,8 +95,8 @@ pipeline {
     }
 }
 ```
-
-### Accessing the API
+### After the successful build, the pushed image will be deployed to the machine in the Hetzner cloud during the deployment phase. 
+### Step 5: Accessing the API
 After completing the setup, the program will be listening on port 443, and you can send a GET request to VM public IP address to receive system metrics in JSON format.
 
 Make sure to replace placeholders (**YOUR_SERVER_PUBLIC_IP**, USER, etc.) with your actual values.
