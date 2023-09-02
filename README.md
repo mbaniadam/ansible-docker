@@ -1,6 +1,6 @@
 # ASA-Project
 
-In this repository you will find a tutorial, on how to set up a Flask API server on Hetzner Cloud using Terraform, Ansible, Docker and Jenkins CI/CD pipeline. This API server offers system metrics by utilizing the psutil library. Is protected with SSL through Caddy v2.
+In this repository, I set up a Flask API server on the Hetzner cloud using Terraform, Ansible, Docker, and the Jenkins CI/CD pipeline. This API server provides some system metrics such as current date and time, memory and CPU usage using the psutil library. It is protected with SSL using Caddy v2.
 
 ### Prerequisites
 Before you begin make sure you have met the following requirements;
