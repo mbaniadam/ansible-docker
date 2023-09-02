@@ -33,7 +33,7 @@ Use Ansible to install Docker and configure iptables on the VM. Ensure Ansible i
 add VM public IP to the inventory.yml.
 Run the playbook:
 ```console bash
-ansible-playbook - inventory.yml
+ansible-playbook -i inventory.yml docker-playbook.yml
 ```
 
 ### Step 3: CI/CD Pipeline with Jenkins
