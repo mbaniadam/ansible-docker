@@ -17,16 +17,10 @@ Before you begin make sure you have met the following requirements;
 git clone https://github.com/mbaniadam/get-linux-metric-api.git
 ```
 - Set up your Hetzner Cloud API token in the variables.tfvars file.
-- Create SSH key pair for authentication
-```console bash
-ssh-keygen -t rsa -m PEM
-```
 - Run Terraform to create the virtual server:
 ```console bash
 terraform apply --var-file variables.tfvars
 ```
-
-This will create the virtual server and copy your SSH public key onto it.
 
 ### Step 2: Install Docker and Configure iptables
 Use Ansible to install Docker and configure iptables on the VM. Ensure Ansible is installed on your local machine.
