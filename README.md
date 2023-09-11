@@ -19,7 +19,7 @@ git clone https://github.com/mbaniadam/get-linux-metric-api.git
 - Set up your Hetzner Cloud API token in the variables.tfvars file.
 - Run Terraform to create the virtual server:
 ```console bash
-terraform apply --var-file variables.tfvars
+terraform apply 
 ```
 
 ### Step 2: Install Docker and Configure iptables
