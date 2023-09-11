@@ -1,9 +1,10 @@
-# Provisioning and configuring infrastructure using Terraform and Ansible, as well as implementing Continuous Deployment with Jenkins.
-## Application: Get Linux system metrics via RestAPI  
+# Application: Get Linux system metrics via RestAPI  
+
+### Provisioning and configuring infrastructure using Terraform and Ansible, as well as implementing Continuous Deployment with Jenkins.
 
 This repository focuses on automating infrastructure provisioning and configuration using Terraform and Ansible, while also implementing a Continuous Deployment pipeline with Jenkins.
 
-Additionally, I have developed a sample Flask API server with Python for automatic deployment on the Hetzner cloud provider.
+Additionally, I have developed a Flask API server with Python for automatic deployment on the Hetzner cloud provider.
 
 This API server provides some system metrics such as current date and time, memory and CPU usage using the psutil library. It is protected with SSL using Caddy v2.
 
