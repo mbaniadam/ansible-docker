@@ -30,8 +30,7 @@ ssh-keygen -t rsa -m PEM
 ```console bash
 terraform apply 
 ```
-This will create the virtual server and copy your SSH public key onto it.
-Uses Ansible to install Docker and configure iptables on the VM.
+**This will create the virtual server and copy your SSH public key onto it, then Uses Ansible to install Docker and configure iptables on the VM.**
 
 
 ### Step 2: CI/CD Pipeline with Jenkins
