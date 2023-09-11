@@ -1,7 +1,12 @@
 # Create a new SSH key
+resource "tls_private_key" "ssh_key" {
+  algorithm = "RSA"
+  rsa_bits  = 2048
+}
+
 resource "hcloud_ssh_key" "default" {
   name       = "hetzner-ssh-key"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = tls_private_key.ssh_key.public_key_openssh
 }
 
 resource "hcloud_server" "mpvps" {
