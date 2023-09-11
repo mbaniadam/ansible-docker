@@ -1,4 +1,5 @@
-# Get Linux system metrics via RestAPI - Continuous Deployment with Jenkins
+# Provisioning and configuring Infrastructure (Terraform and Ansible) and Continuous Deployment (Jenkins)
+# Application: Get Linux system metrics via RestAPI  
 
 In this repository, I set up a Flask API server on the Hetzner cloud using Terraform, Ansible, Docker, and the Jenkins CI/CD pipeline. This API server provides some system metrics such as current date and time, memory and CPU usage using the psutil library. It is protected with SSL using Caddy v2.
 
