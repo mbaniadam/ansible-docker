@@ -16,7 +16,7 @@ Before you begin make sure you have met the following requirements;
 - Docker Hub account and an API token to push image.
 
 
-### Step 1: Create a Virtual Server on Hetzner Cloud
+### Step 1: Create a Virtual Server on Hetzner Cloud, then Install Docker and Configure iptables
 - Clone this repository to your local machine.
 ```console bash
 git clone https://github.com/mbaniadam/get-linux-metric-api.git
@@ -31,17 +31,10 @@ ssh-keygen -t rsa -m PEM
 terraform apply 
 ```
 This will create the virtual server and copy your SSH public key onto it.
+Uses Ansible to install Docker and configure iptables on the VM.
 
 
-### Step 2: Install Docker and Configure iptables
-Use Ansible to install Docker and configure iptables on the VM. Ensure Ansible is installed on your local machine.
-add VM public IP to the inventory.yml.
-Run the playbook:
-```console bash
-ansible-playbook -i inventory.yml docker-playbook.yml
-```
-
-### Step 3: CI/CD Pipeline with Jenkins
+### Step 2: CI/CD Pipeline with Jenkins
 - Set up Jenkins and install necessary plugins.(publish-over-ssh)
 
 **_NOTE:_**  You can use my ansible playbook in the ansible directory of this repository for this purpose.
