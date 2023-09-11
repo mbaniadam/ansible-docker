@@ -1,4 +1,4 @@
-# Application: Get Linux system metrics via RestAPI  
+# Get Linux system metrics via RestAPI  
 
 ### Provisioning and configuring infrastructure using Terraform and Ansible, as well as implementing Continuous Deployment with Jenkins.
 
