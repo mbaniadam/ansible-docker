@@ -1,3 +1,0 @@
-:5000 {
-    reverse_proxy lininfo:5000  
-}

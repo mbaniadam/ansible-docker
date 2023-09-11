@@ -17,10 +17,16 @@ Before you begin make sure you have met the following requirements;
 git clone https://github.com/mbaniadam/get-linux-metric-api.git
 ```
 - Set up your Hetzner Cloud API token in the variables.tfvars file.
+- Create SSH key pair for authentication
+```console bash
+ssh-keygen -t rsa -m PEM
+```
 - Run Terraform to create the virtual server:
 ```console bash
 terraform apply 
 ```
+This will create the virtual server and copy your SSH public key onto it.
+
 
 ### Step 2: Install Docker and Configure iptables
 Use Ansible to install Docker and configure iptables on the VM. Ensure Ansible is installed on your local machine.
@@ -59,7 +65,7 @@ pipeline {
     
         stage('Build docker image') {
             steps {
-                sh 'docker build --network host -t mortalbm/lininfo:v1.0 -f N4/Dockerfile .'
+                sh 'docker build --network host -t mortalbm/lininfo:v1.0 -f Ansible-Configure/Build-Run-Docker/Dockerfile .'
             }
         }
         
@@ -77,7 +83,7 @@ pipeline {
         
         stage('Deploy to server') {
             steps {
-                sshPublisher(publishers: [sshPublisherDesc(configName: '<USER>@<YOUR_SERVER_PUBLIC_IP>', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker-compose -f N4/docker-compose.yml up -d', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'N4/')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                sshPublisher(publishers: [sshPublisherDesc(configName: '<USER>@<YOUR_SERVER_PUBLIC_IP>', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker-compose -f Ansible-Configure/Build-Run-Docker/docker-compose.yml up -d', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '', remoteDirectorySDF: false, removePrefix: '', sourceFiles: 'Ansible-Configure/Build-Run-Docker/')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
             }
         }
     
