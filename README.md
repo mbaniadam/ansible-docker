@@ -1,4 +1,4 @@
-# Provisioning and configuring Infrastructure (Terraform and Ansible) and Continuous Deployment (Jenkins)
+# Provisioning and configuring infrastructure using Terraform and Ansible, as well as implementing Continuous Deployment with Jenkins.
 # Application: Get Linux system metrics via RestAPI  
 
 This repository focuses on automating infrastructure provisioning and configuration using Terraform and Ansible, while also implementing a Continuous Deployment pipeline with Jenkins.
