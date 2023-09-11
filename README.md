@@ -14,7 +14,7 @@ Before you begin make sure you have met the following requirements;
 ### Step 1: Create a Virtual Server on Hetzner Cloud
 - Clone this repository to your local machine.
 ```console bash
-git clone https://github.com/mbaniadam/get-linux-metric-api
+git clone https://github.com/mbaniadam/get-linux-metric-api.git
 ```
 - Set up your Hetzner Cloud API token in the variables.tfvars file.
 - Create SSH key pair for authentication
@@ -59,7 +59,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_token', url: 'https://github.com/mbaniadam/get-linux-metric-api']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_token', url: 'https://github.com/mbaniadam/get-linux-metric-api.git']])
             }
         }
     
